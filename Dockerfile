@@ -2,9 +2,7 @@ FROM nginx:latest
 
 MAINTAINER danielmapar@gmail.com
 
-ENV NGINX_DIR /etc/
-RUN mkdir -p $NGINX_DIR
-
-COPY . $NGINX_DIR
+COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
+COPY ./nginx/conf.d/* /etc/nginx/conf.d/
 
 EXPOSE 80
